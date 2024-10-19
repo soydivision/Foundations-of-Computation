@@ -1,0 +1,451 @@
+                           Chapter 1.1. PROPOSITIONAL LOGIC.
+A proposition is a statement that has a truth value: It is either true or false.
+
+The logical operators corresponding to the English words “and,” “or,”and “not” are ∧, ∨, and ¬.
+
+The operators ∧, ∨, and ¬ are referred to as conjunction, disjunction, and negation, respectively.
+
+                                           Precedence rules.
+¬ > ∧ > ∨=⊕ >→> ↔
+
++------------+-------------------------+
+| Operator   | Precedence (highest to  |
+|            | lowest)                 |
++------------+-------------------------+
+| ¬ (NOT)    | Highest                 |
++------------+-------------------------+
+| ∧ (AND)    |                         |
++------------+-------------------------+
+| ∨ (OR)     |                         |
+| ⊕ (XOR)    | Same precedence as ∨    |
++------------+-------------------------+
+| → (IMPLIES)|                         |
++------------+-------------------------+
+| ↔ (IFF)    | Lowest                  |
++------------+-------------------------+
+
+
+
+                            Conditional, bi-conditional, exclusive or operators.
+
++--------+--------+-------+-------+-------+
+|   p    |   q    |  p→q  |  p↔q  |  p⊕q  |
++--------+--------+-------+-------+-------+
+| false  | false  | true  | true  | false |
++--------+--------+-------+-------+-------+
+| false  | true   | true  | false | true  |
++--------+--------+-------+-------+-------+
+| true   | false  | false | false | true  |
++--------+--------+-------+-------+-------+
+| true   | true   | true  | true  | false |
++--------+--------+-------+-------+-------+
+
+
+
+p → q ~ if p then q.
+
+                                               Exercises.
+
+1. Give the three truth tables that define the logical operators ∧, ∨, and ¬.
+∧ (AND),  
+
++--------+--------+-------+
+|   p    |   q    |  p∧q  |
++--------+--------+-------+
+| false  | false  | false |
++--------+--------+-------+
+| false  | true   | false |
++--------+--------+-------+
+| true   | false  | false |
++--------+--------+-------+
+| true   | true   | true  |
++--------+--------+-------+
+∨ (OR),
++--------+--------+-------+
+|   p    |   q    |  p∨q  |
++--------+--------+-------+
+| false  | false  | false |
++--------+--------+-------+
+| false  | true   | true  |
++--------+--------+-------+
+| true   | false  | true  |
++--------+--------+-------+
+| true   | true   | true  |
++--------+--------+-------+
+and ¬ (NOT):
++--------+-------+
+|   p    |  ¬p   |
++--------+-------+
+| false  | true  |
++--------+-------+
+| true   | false |
++--------+-------+
+
+
+2. Insert parentheses into the following compound propositions to show the order
+in which the operators are evaluated.
+a) (¬p) ∨ q
+b) (p ∧ q) ∨ (¬p)
+c) p ∨ (q ∧ r)
+d) (p ∧ (¬q)) ∨ r
+
+3. List the 16 possible combinations of truth values for the four propositional
+variables s, p, q, r.
++-------+-------+-------+-------+
+|   p   |   q   |   r   |   s   |
++-------+-------+-------+-------+
+| true  | true  | true  | true  |
+| true  | true  | true  | false |
+| true  | true  | false | true  |
+| true  | true  | false | false |
+| true  | false | true  | true  |
+| true  | false | true  | false |
+| true  | false | false | true  |
+| true  | false | false | false |
+| false | true  | true  | true  |
+| false | true  | true  | false |
+| false | true  | false | true  |
+| false | true  | false | false |
+| false | false | true  | true  |
+| false | false | true  | false |
+| false | false | false | true  |
+| false | false | false | false |
++-------+-------+-------+-------+
+
+4. Some of the following compound propositions are tautologies, some are contradictions, and some
+are neither.
+a) (p ∧ (p → q)) → q – tautology, truth in all cases.
+
++-------+-------+---------------------------+
+|   p   |   q   | (p ∧ (p → q)) → q        |
++-------+-------+---------------------------+
+| true  | true  | t ∧ (t → t) → t = true   |
+| true  | false | t ∧ (t → f) → f = false  |
+| false | true  | f ∧ (f → t) → t = true   |
+| false | false | f ∧ (f → f) → f = false  |
++-------+-------+---------------------------+
+
+
+
+b) ((p → q) ∧ (q → r)) → (p → r) - tautology, truth in all cases.
++-------+-------+-------+--------+--------+-------+--------+--------+
+|   p   |   q   |   r   |  p→q   |  q→r   |   ∧   |  p→r   | result |
++-------+-------+-------+--------+--------+-------+--------+--------+
+| true  | true  | true  |  true  |  true  | true  | true   | true   |
+| true  | true  | false |  true  | false  | true  | true   | true   |
+| true  | false | true  | false  |  true  | true  | true   | true   |
+| true  | false | false | false  | false  | false | false  | true   |
+| false | true  | true  | false  |  true  | true  | true   | true   |
+| false | true  | false |  true  |  true  | true  | true   | true   |
+| false | false | true  |  true  |  true  | true  | true   | true   |
+| false | false | false |  true  |  true  | true  | true   | true   |
++-------+-------+-------+--------+--------+-------+--------+--------+
+
+c) p ∧ (¬p) - contradiction, not a tautology
++-------+-------+--------+
+|   p   |  ¬p   | result |
++-------+-------+--------+
+| true  | false | false  |
+| false | true  | false  |
++-------+-------+--------+
+
+d) (p ∨ q) → (p ∧ q) - not a tautology; it is a conditional statement
++-------+-------+-------+-------+-----------------+
+|   p   |   q   | p ∨ q | p ∧ q | (p ∨ q) → (p ∧ q) |
++-------+-------+-------+-------+-----------------+
+| true  | true  | true  | true  | true            |
+| true  | false | true  | false | false           |
+| false | true  | true  | false | false           |
+| false | false | false | false | true            |
++-------+-------+-------+-------+-----------------+
+
+
+f) (p ∧ q) → (p ∨ q) tautology
++-------+-------+-------+-------+----------------------+
+|   p   |   q   | p ∧ q | p ∨ q |(p ∧ q) → (p ∨ q)    | 	 	
++-------+-------+-------+-------+----------------------+
+| true  | true  | true  | true  | true                 |
+| true  | false | false | true  | true                 |
+| false | true  | false | true  | true                 |
+| false | false | false | false | true                 |
++-------+-------+-------+-------+----------------------+
+
+
+5. Use truth tables to show that each of the following propositions is logically
+equivalent to p ↔ q.
++-------+-------+-------------+
+|   p   |   q   | p ↔ q       |
++-------+-------+-------------+
+| true  | true  | true        |
+| true  | false | false       |
+| false | true  | false       |
+| false | false | true        |
++-------+-------+-------------+
+
+
+
+a) (p → q) ∧ (q → p)
++-------+-------+----------+----------+-------------------------+
+|   p   |   q   | p → q    | q → p    | (p → q) ∧ (q → p)       |
++-------+-------+----------+----------+-------------------------+
+| true  | true  | true     | true     | true                    |
+| true  | false | false    | true     | false                   |
+| false | true  | true     | false    | false                   |
+| false | false | true     | true     | true                    |
++-------+-------+----------+----------+-------------------------+
+
+
+b) (¬p) ↔ (¬q)
++-------+-------+--------+--------+------------------------+
+|   p   |   q   | ¬p     | ¬q     | (¬p) ↔ (¬q)            |
++-------+-------+--------+--------+------------------------+
+| true  | true  | false  | false  | true                   |
+| true  | false | false  | true   | false                  |
+| false | true  | true   | false  | false                  |
+| false | false | true   | true   | true                   |
++-------+-------+--------+--------+------------------------+
+
+
+
+c) (p → q) ∧ ((¬p) → (¬q))
++-------+-------+--------+-------+-------+-----------------+---------------------------+
+|   p   |   q   | p → q  | ¬p    | ¬q    | (¬p) → (¬q)     | (p → q) ∧ ((¬p) → (¬q))   |
++-------+-------+--------+-------+-------+-----------------+---------------------------+
+| true  | true  | true   | false | false | true            | true              	       |
+| true  | false | false  | false | true  | true            | false                     |
+| false | true  | true   | true  | false | false           | false                     |
+| false | false | true   | true  | true  | true            | true                      |
++-------+-------+--------+-------+-------+-----------------+---------------------------+
+
+
+d) ¬(p ⊕ q)
++-------+-------+---------+-------+
+|   p   |   q   | p ⊕ q   | ¬    |
++-------+-------+---------+-------+
+| true  | true  | false   | true |
+| true  | false | true    | false|
+| false | true  | true    | false|
+| false | false | false   | true |
++-------+-------+---------+-------+
+
+
+6. Is (p → q) → r logically equivalent to p → (q → r)?
+
+(p→q)→r and p→(q→r)
++-------+-------+-------+--------+------+---------------------+----------------+
+|   p   |   q   |   r   | p → q  | q → r| (p → q) → r         |  p → (q → r)   | 
++-------+-------+-------+--------+------+---------------------+----------------+
+| true  | true  | true  | true   | true | true                |true            | 
+| true  | true  | false | true   | false| false               |false           |
+| true  | false | true  | false  | true | true                |true            |
+| true  | false | false | false  | true	| true                |true            |
+| false | true  | true  | true   | true	| true                |true            |
+| false | true  | false | true   | false| false               |true            |
+| false | false | true  | true   | true	| true                |true            |
+| false | false | false | true   | true	| false               |true            |
++-------+-------+-------+--------+------+---------------------+----------------+
+
+//PROGRESS
+
+
+7. Let p represent the proposition “You leave” and let q represent the proposition “I leave.” Express
+the following sentences as compound propositions using p and q, and show that they are logically
+equivalent:
+
+a) Either you leave or I do. (Or both!)
+p                                 q                                  p∨q
+true                              true                               true
+true                              false                              true
+false                             true                               true
+false                             false                              false
+b) If you don’t leave, I will. ¬p – don’t leave, q – I’ll leave.
+¬p                                 q                                ¬p→q
+false                              true                             true
+false                              false                            true
+true                               true                             true
+true                               false                            false
+
+8. Suppose that
+m - “The Earth moves,”
+c - “The Earth is the center of the universe,”
+g - “Galileo was rail roaded.”
+Translate each of the following compound propositions into English:
+a) ¬g ∧ c
+Galileo wasn’t rail roaded and the earth is the center of universe.
+b) m → ¬c
+If the earth moves, then the earth is not the center of universe.
+c) m ↔ ¬c
+If and only if the earth moves the earth is not the center of the universe.
+d) (m → g) ∧ (c → ¬g)
+If The Earth moves Galileo was rail roaded and If The Earth is the center of the universe Galileo
+was not rail roaded.
+
+9. Note: The implication (¬q) → (¬p) is called the contrapositive of p → q; q → p – converse.
+
+Give the converse and the contrapositive of each of the following English sentences:
+
+a) If you are good, Santa brings you toys.
+b) If the package weighs more than one ounce, then you need extra postage.
+c) If I have a choice, I don’t eat eggplant.
+
+Converse:
+a) If Santa brings you toys, you are good.
+b) If you need extra postage, the package weighs more than one ounce.
+c) If I don’t eat eggplant, I have a choice.
+
+Contrapositive:
+
+a) Santa will not bring you toys, if you are not good.
+b) You don’t need an extra postage, if the package is less than one ounce.
+c) I eat eggplant, If I don’t have a choice.
+
+10. In an ordinary deck of fifty-two playing cards, for how many cards is it true
+a) that “This card is a ten and this card is a heart”?
+1
+b) that “This card is a ten or this card is a heart”?
+4 + 13
+c) that “If this card is a ten, then this card is a heart”?
+1
+d) that “This card is a ten if and only if this card is a heart”?
+0.
+11. Define a logical operator ↓ so that p ↓ q is logically equivalent to ¬(p ∨ q). (This operator is
+usually referred to as “nor,” short for “not or”). Show that each of the propositions ¬p, p ∧ q, p ∨ q,
+p → q, p ↔ q, and p ⊕ q can be rewritten as a logically equivalent proposition that uses ↓ as its
+only operator.
+Comment: Turns out this operator is functionally complete.
+0) ¬p = p ↓ p
+
+1) p ↓ q = ¬(p ∨ q) // by definition
+¬p = p ↓ p, ¬q = q ↓ q
+p ∧ q = ¬(¬p ∨ ¬q)
+p ∧ q =¬(( p↓p) ∨ (q↓q)) = ( p↓p) ↓ (q↓q), thus
+p ∧ q = (p↓p) ↓ (q↓q)
+
+2) p ∨ q
+p∨q≡¬(p↓q)
+p∨q≡(p↓q)↓(p↓q)
+
+3) p → q
+p→q≡¬p∨q
+From earlier:
+¬p≡p↓p
+Thus:
+p→q≡(p↓p)↓q
+
+4) p ↔ q
+To express ↔ p↔q: ↔ ≡ ( → ) ( → ) p↔q≡(p→q) (q→p)                       ∧ ∧
+Using the previous results: → ≡ ( ↓ ) ↓ p→q≡(p↓p)↓q → ≡ ( ↓ ) ↓ q→p≡(q↓q)↓p
+Thus: ↔ ≡ ( ( ↓ ) ↓ ) ( ( ↓ ) ↓ ) p↔q≡((p↓p)↓q) ((q↓q)↓p)           ∧   ∧
+We already know that ∧ ∧ can be expressed as: � ∧ �≡ ¬ ( ¬ � ∨ ¬ � ) A ∧B≡¬(¬A∨¬B)
+Thus: � ∧ � ≡ ( ( � ↓ � ) ↓ ( � ↓ � ) ) ↓ ( ( � ↓ � ) ↓ ( � ↓ � ) )
+A∧B≡((A↓A)↓(B↓B))↓((A↓A)↓(B↓B))
+So: ↔ ≡ ( ( ( ( ↓ ) ↓ ) ↓ ( ( ↓ ) ↓ ) ) ↓ ( ( ( ↓ ) ↓ ) ↓ ( ( ↓ ) ↓ ) ) ) ↓ ( ( ( ( ↓ ) ↓ ) ↓ ( ( ↓ ) ↓
+ ))↓((( ↓ )↓ )↓(( ↓ )↓�)))
+p↔q≡((((p↓p)↓q)↓((p↓p)↓q))↓(((q↓q)↓p)↓((q↓q)↓p)))↓((((p↓p)↓q)↓((p↓p)↓q))↓(((q↓q)↓p)↓((q↓q)↓p)
+))
+
+5) p ⊕ q
+To express p⊕q: ⊕ ≡ ( ∨ ) ∧ ¬ ( ∧ ) p⊕q≡(p∨q)∧¬(p∧q)
+We already have: ∨ ≡ ( ↓ ) ↓ ( ↓ ) p q≡(p↓q)↓(p↓q)             ≡ (∧
+                                                               ∨   ( ↓ )↓( ↓ ))↓(( ↓ )↓( ↓ ))
+p∧q≡((p↓p)↓(q↓q))↓((p↓p)↓(q↓q))
+Thus: ¬ ( ∧ ) ≡ ( ( ( ↓ ) ↓ ( ↓ ) ) ↓ ( ( ↓ ) ↓ ( ↓ ) ) ) ↓ ( ( ( ↓ ) ↓ ( ↓ ) ) ↓ ( ( ↓ ) ↓ ( ↓ ) ) )
+¬(p∧q)≡(((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓(((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))
+Then: ⊕ ≡ ( ( ↓ ) ↓ ( ↓ ) ) ( ( ∧     (( ↓ )↓( ↓ ))↓(( ↓ )↓( ↓ )))↓((( ↓ )↓( ↓ ))↓(( ↓
+ )↓( ↓�))))
+p⊕q≡((p↓q)↓(p↓q))∧((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓(((p↓p)↓(q↓q))↓((p↓p)↓(q↓q))))
+Finally: ⊕ ≡ ( ( ( ( ↓ ) ↓ ( ↓ ) ) ↓ ( ( ↓ ) ↓ ( ↓ ) ) ) ↓ ( ( ( ( ↓ ) ↓ ( ↓ ) ) ↓ ( ( ↓ ) ↓ ( ↓ ) ) ) ↓ (
+((( ↓ )↓( ↓ ))↓(( ↓ )↓( ↓ )))))↓(((( ↓ )↓( ↓ ))↓(( ↓ )↓( ↓ )))↓(((( ↓ )↓(
+↓ ))↓(( ↓ )↓( ↓ )))↓(((( ↓ )↓( ↓ ))↓(( ↓ )↓( ↓ ))))))↓(((( ↓ )↓( ↓ ))↓((
+↓ )↓( ↓ )))↓(((( ↓ )↓( ↓ ))↓(( ↓ )↓( ↓ )))↓(((( ↓ )↓( ↓ ))↓(( ↓ )↓( ↓
+�))))))]
+p⊕q≡((((p↓q)↓(p↓q))↓((p↓q)↓(p↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q
+)))))↓((((p↓q)↓(p↓q))↓((p↓q)↓(p↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)
+)))))↓((((p↓q)↓(p↓q))↓((p↓q)↓(p↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)
+)))))]
+
+Truth tables.
+ p                      q                 p∨q                 ¬(p ∨ q)             p↓q
+true                    true              true                false                false
+true                    false             true                false                false
+false                   true              true                false                false
+false                   false             false               true                 true
+
+
+ p              q               ¬p      p∧q         p∨q          p→q          p↔q          p⊕q
+true            true            false   true        true         true         true         false
+true            false           false   false       true         false        false        true
+false           true            true    false       true         true         false        true
+false           false           true    false       false        true         true         false
+
+
+**Functional completeness.
+aslkljfa
+
+
+
+Chapter 1.2. Boolean Algebra
+
+Double negation                                     ¬(¬p) ≡ p
+Excluded middle                                     p ∨ ¬p ≡ T
+Contradiction                                       p ∧ ¬p ≡ F
+Identity laws                                       T∧p≡p
+                                                    F∨p≡p
+Idempotent laws                                     p∧p≡p
+                                                    p∨p≡p
+Commutative laws                                    p∧q≡q∧p
+                                                    p∨q≡q∨p
+Associative laws                                    (p ∧ q) ∧ r ≡ p ∧ (q ∧ r)
+                                                    (p ∨ q) ∨ r ≡ p ∨ (q ∨ r)
+Distributive laws                                   p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)
+                                                    p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)
+DeMorgan’s laws                                     ¬(p ∧ q) ≡ (¬p) ∨ (¬q)
+                                                    ¬(p ∨ q) ≡ (¬p) ∧ (¬q)
+
+Theorem 1.1 (First Substitution Law). Suppose that Q is any proposition, and that p is a
+propositional variable. Consider any tautology. If (Q) is substituted for p in all places where p
+occurs in the tautology, then the result is also a tautology.
+
+Theorem 1.2 (Second Substitution Law). Suppose that P and Q are any propositions such that P ≡
+Q. Suppose that R is any compound proposition in which (P) occurs as a subproposition. Let R′ be
+the proposition that is obtained by substituting (Q) for that occurrence of (P) in R. Then R ≡ R′.
+
+Substitution Law: The equivalence Q ≡ R allows us to substitute R for Q in the statement P ≡ Q,
+giving P ≡ R.
+                                              Exercises.
+1. Construct truth tables to demonstrate the validity of each of the distributive
+laws.
+
+a) p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)
+
+P   Q     R       Q∨R      p ∧ (q ∨ r)     p∧q        p∧r        (p ∧ q) ∨ (p ∧ r)
+T   T     T       T        T               T          T          T
+T   T     F       T        T               T          F          T
+T   F     T       T        T               F          T          T
+T   F     F       T        T               F          F          F
+F   T     T       T        F               F          F          F
+F   T     F       F        T               F          T          T
+F   F     T       T        F               T          F          F
+F   F     F       F        T               T          T          T
+
+b) p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)
+
+P   Q     R       Q∧R      p ∨ (q ∧ r)     p∨q        p∨r        (p ∨ q) ∧ (p ∨ r)
+T   T     T       T        T               T          T          T
+T   T     F       F        T               T          T          T
+T   F     T       F        T               T          T          T
+T   F     F       T        T               T          T          T
+F   T     T       T        T               T          T          T
+F   T     F       F        F               T          F          F
+F   F     T       F        F               F          T          F
+F   F     F       T        T               F          F          T
+
+2.
+a) Construct truth tables to demonstrate that ¬(p ∧ q) is not logically equivalent to (¬p) ∧ (¬q).
+
+p             q
+t             t
+t             f
+f             t
+f             f
+
