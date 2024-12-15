@@ -232,21 +232,20 @@ d) ¬(p ⊕ q)
 6. Is (p → q) → r logically equivalent to p → (q → r)? ~No.
 
 (p→q)→r and p→(q→r)
-+-------+-------+-------+--------+------+---------------------+----------------+
-|   p   |   q   |   r   | p → q  | q → r| (p → q) → r         |  p → (q → r)   | 
-+-------+-------+-------+--------+------+---------------------+----------------+
-| true  | true  | true  | true   | true | true                |true            | 
-| true  | true  | false | true   | false| false               |false           |
-| true  | false | true  | false  | true | true                |true            |
-| true  | false | false | false  | true	| true                |true            |
-| false | true  | true  | true   | true	| true                |true            |
-| false | true  | false | true   | false| false               |true            |
-| false | false | true  | true   | true	| true                |true            |
-| false | false | false | true   | true	| false               |true            |
-+-------+-------+-------+--------+------+---------------------+----------------+
++-------+-------+-------+--------+------+------------------+----------------+
+|   p   |   q   |   r   | p → q  | q → r| (p → q) → r      |  p → (q → r)   | 
++-------+-------+-------+--------+------+------------------+----------------+
+| true  | true  | true  | true   | true | true             |true            | 
+| true  | true  | false | true   | false| false            |false           |
+| true  | false | true  | false  | true | true             |true            |
+| true  | false | false | false  | true	| true             |true            |
+| false | true  | true  | true   | true	| true             |true            |
+| false | true  | false | true   | false| false            |true            |
+| false | false | true  | true   | true	| true             |true            |
+| false | false | false | true   | true	| false            |true            |
++-------+-------+-------+--------+------+------------------+----------------+
 
 //PROGRESS
-
 
 7. Let p represent the proposition “You leave” and let q represent the proposition “I leave.” Express
 the following sentences as compound propositions using p and q, and show that they are logically
@@ -258,7 +257,7 @@ true                              true                               true
 true                              false                              true
 false                             true                               true
 false                             false                              false
-b) If you don’t leave, I will. ¬p – don’t leave, q – I’ll leave.
+b) If you don’t leave, I will. ¬p – don’t leave, q – I’ll leave.
 ¬p                                 q                                ¬p→q
 false                              true                             true
 false                              false                            true
@@ -308,7 +307,7 @@ c) that “If this card is a ten, then this card is a heart”?
 1
 d) that “This card is a ten if and only if this card is a heart”?
 0.
-11. Define a logical operator ↓ so that p ↓ q is logically equivalent to ¬(p ∨ q). (This operator is
+↑11. Define a logical operator ↓ so that p ↓ q is logically equivalent to ¬(p ∨ q). (This operator is
 usually referred to as “nor,” short for “not or”). Show that each of the propositions ¬p, p ∧ q, p ∨ q,
 p → q, p ↔ q, and p ⊕ q can be rewritten as a logically equivalent proposition that uses ↓ as its
 only operator.
@@ -361,7 +360,7 @@ Finally: ⊕ ≡ ( ( ( ( ↓ ) ↓ ( ↓ ) ) ↓ ( ( ↓ ) ↓ ( ↓ ) ) ) ↓ (
 �))))))]
 p⊕q≡((((p↓q)↓(p↓q))↓((p↓q)↓(p↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q
 )))))↓((((p↓q)↓(p↓q))↓((p↓q)↓(p↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)
-)))))↓((((p↓q)↓(p↓q))↓((p↓q)↓(p↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)
+↑)))))↓((((p↓q)↓(p↓q))↓((p↓q)↓(p↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)))↓((((p↓p)↓(q↓q))↓((p↓p)↓(q↓q)
 )))))]
 
 Truth tables.
@@ -412,7 +411,7 @@ the proposition that is obtained by substituting (Q) for that occurrence of (P) 
 
 Substitution Law: The equivalence Q ≡ R allows us to substitute R for Q in the statement P ≡ Q,
 giving P ≡ R.
-                                              Exercises.
+↑                                              Exercises.
 1. Construct truth tables to demonstrate the validity of each of the distributive
 laws.
 
@@ -448,4 +447,4 @@ t             t
 t             f
 f             t
 f             f
-
+↑
